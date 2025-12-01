@@ -30,11 +30,12 @@ class OpenaiTriggerTrigger(Trigger):
     def _dispatch_trigger_events(self, payload: Mapping[str, Any]) -> list[str]:
         """Dispatch events based on webhook payload."""
         events = []
+
         # Get the event type from the payload
         event_type = payload.get("type", "")
 
-        if event_type.startswith("my-event-type"):
-            events.append("openai_trigger_event")
+        if event_type:
+            events.append(event_type)
 
         return events
 
