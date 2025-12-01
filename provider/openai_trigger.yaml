@@ -2,17 +2,12 @@ identity:
   name: "openai_trigger"
   author: "bowenliang123"
   label:
-    en_US: "openai_trigger"
-    zh_Hans: "openai_trigger"
-    pt_BR: "openai_trigger"
-    ja_JP: "openai_trigger"
+    en_US: OpenAI Webhook Trigger
+    zh_Hans: OpenAI Webhook 触发器
   description:
-    en_US: "OpenAI Trigger"
-    zh_Hans: "OpenAI Trigger"
-    pt_BR: "OpenAI Trigger"
-    ja_JP: "OpenAI Trigger"
+    en_US: OpenAI Webhook Trigger
+    zh_Hans: OpenAI Webhook 触发器
   icon: "icon.svg"
-
 
 subscription_schema:
   - name: "webhook_secret"
