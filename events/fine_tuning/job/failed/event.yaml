@@ -1,5 +1,5 @@
 identity:
-  name: "openai_event_finetuning_job_failed_event"
+  name: "fine_tuning.job.failed"
   author: "bowenliang123"
   label:
     en_US: "Finetuning Job Failed Event"

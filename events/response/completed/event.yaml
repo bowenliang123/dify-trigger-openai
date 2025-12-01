@@ -1,5 +1,5 @@
 identity:
-  name: "openai_event_response_completed_event"
+  name: "response.completed"
   author: "bowenliang123"
   label:
     en_US: "Response Completed Event"

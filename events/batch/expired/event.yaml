@@ -1,5 +1,5 @@
 identity:
-  name: "openai_event_batch_expired_event"
+  name: "batch.expired"
   author: "bowenliang123"
   label:
     en_US: "Batch Expired Event"

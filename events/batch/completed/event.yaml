@@ -1,5 +1,5 @@
 identity:
-  name: "openai_event_batch_completed_event"
+  name: "batch.completed"
   author: "bowenliang123"
   label:
     en_US: "Batch Completed Event"

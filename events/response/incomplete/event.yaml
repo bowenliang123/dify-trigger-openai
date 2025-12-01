@@ -1,5 +1,5 @@
 identity:
-  name: "openai_event_response_incomplete_event"
+  name: "response.incomplete"
   author: "bowenliang123"
   label:
     en_US: "Response Incomplete Event"

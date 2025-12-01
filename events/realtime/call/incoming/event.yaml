@@ -1,5 +1,5 @@
 identity:
-  name: "openai_realtime_call_incoming_event"
+  name: "realtime.call.incoming"
   author: "bowenliang123"
   label:
     en_US: "Realtime Call Incoming Event"

@@ -1,5 +1,5 @@
 identity:
-  name: "openai_event_eval_run_cancelled_event"
+  name: "eval.run.canceled"
   author: "bowenliang123"
   label:
     en_US: "Eval Run Cancelled Event"

@@ -1,5 +1,5 @@
 identity:
-  name: "openai_event_eval_run_succeeded_event"
+  name: "eval.run.succeeded"
   author: "bowenliang123"
   label:
     en_US: "Eval Run Succeeded Event"

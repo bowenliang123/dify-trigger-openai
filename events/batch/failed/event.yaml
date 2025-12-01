@@ -1,5 +1,5 @@
 identity:
-  name: "openai_event_batch_failed_event"
+  name: "batch.failed"
   author: "bowenliang123"
   label:
     en_US: "Batch Failed Event"

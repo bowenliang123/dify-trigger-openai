@@ -1,5 +1,5 @@
 identity:
-  name: "openai_event_eval_run_failed_event"
+  name: "eval.run.failed"
   author: "bowenliang123"
   label:
     en_US: "Eval Run Failed Event"

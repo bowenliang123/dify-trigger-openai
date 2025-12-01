@@ -1,5 +1,5 @@
 identity:
-  name: "openai_event_response_failed_event"
+  name: "response.failed"
   author: "bowenliang123"
   label:
     en_US: "Response Failed Event"

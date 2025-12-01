@@ -1,5 +1,5 @@
 identity:
-  name: "openai_event_response_cancelled_event"
+  name: "response.cancelled"
   author: "bowenliang123"
   label:
     en_US: "Response Cancelled Event"

@@ -1,5 +1,5 @@
 identity:
-  name: "openai_event_batch_cancelled_event"
+  name: "batch.cancelled"
   author: "bowenliang123"
   label:
     en_US: "Batch Cancelled Event"
