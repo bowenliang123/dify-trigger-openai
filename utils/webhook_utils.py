@@ -30,6 +30,7 @@ def transform_webhook(event_type: str,
     if not payload:
         raise ValueError("No payload received")
 
+
     actual_event_type = payload.get("type")
     if event_type != actual_event_type:
         raise EventIgnoreError(f"Expecting event type '{event_type}', got '{actual_event_type}' in payload.")
