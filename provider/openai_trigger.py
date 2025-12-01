@@ -26,7 +26,6 @@ class OpenaiTriggerTrigger(Trigger):
     def _dispatch_event(self, subscription: Subscription, request: Request) -> EventDispatch:
         try:
             webhook_secret = subscription.properties.get("webhook_secret")
-            print(f"webhook_secret: {webhook_secret}")
             if not webhook_secret:
                 raise TriggerDispatchError("Webhook secret is required to validate request.")
 
