@@ -29,12 +29,15 @@ output_schema:
     id:
       type: string
       description: "The unique ID of the event."
-    data:
-      type: object
-      description: "The data payload returned by the OpenAI API."
+    object:
+      type: string
+      description: "The object of the event. Always event."
     type:
       type: string
       description: "The type of the event."
+    data:
+      type: object
+      description: "The data payload returned by the OpenAI API."
 
 extra:
   python:
