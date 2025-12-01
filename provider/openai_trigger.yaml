@@ -125,7 +125,11 @@ subscription_constructor:
 
 
 events:
+  # response
   - events/response/completed/event.yaml
+  - events/response/cancelled/event.yaml
+  - events/response/failed/event.yaml
+  - events/response/incomplete/event.yaml
 
 extra:
   python:
