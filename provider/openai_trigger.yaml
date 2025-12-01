@@ -143,6 +143,8 @@ events:
   - events/eval/run/canceled/event.yaml
   - events/eval/run/failed/event.yaml
   - events/eval/run/succeeded/event.yaml
+  # incoming
+  - events/realtime/call/incoming/event.yaml
 
 extra:
   python:
