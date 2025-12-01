@@ -4,14 +4,10 @@ author: bowenliang123
 name: openai_trigger
 label:
   en_US: openai_trigger
-  ja_JP: openai_trigger
   zh_Hans: openai_trigger
-  pt_BR: openai_trigger
 description:
   en_US: OpenAI Trigger
-  ja_JP: OpenAI Trigger
   zh_Hans: OpenAI Trigger
-  pt_BR: OpenAI Trigger
 icon: icon.svg
 icon_dark: icon-dark.svg
 resource:
@@ -32,4 +28,5 @@ meta:
   minimum_dify_version: null
 created_at: 2025-11-27T00:04:40.703444+08:00
 privacy: PRIVACY.md
+repo: https://github.com/bowenliang123/dify-trigger-openai
 verified: false
