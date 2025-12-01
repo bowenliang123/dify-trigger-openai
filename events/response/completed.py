@@ -17,4 +17,4 @@ class OpenaiResponseCompleted(Event):
     """
 
     def _on_event(self, request: Request, parameters: Mapping[str, Any], payload: Mapping[str, Any]) -> Variables:
-        return transform_webhook(parameters, request)
+        return transform_webhook(request, parameters, payload)
