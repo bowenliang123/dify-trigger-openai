@@ -17,4 +17,4 @@ class OpenaiResponseIncompleteEvent(Event):
     """
 
     def _on_event(self, request: Request, parameters: Mapping[str, Any], payload: Mapping[str, Any]) -> Variables:
-        return transform_webhook(request, parameters, payload)
+        return transform_webhook("response.incomplete", request, parameters, payload)
