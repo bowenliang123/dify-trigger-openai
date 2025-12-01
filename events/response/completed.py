@@ -8,7 +8,7 @@ from werkzeug import Request
 from utils.webhook_utils import transform_webhook
 
 
-class OpenaiResponseCompleted(Event):
+class OpenaiResponseCompletedEvent(Event):
     """
     OpenAI response.completed webhook payload
 
