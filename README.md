@@ -2,7 +2,7 @@
 
 **Author:** [bowenliang123](https://github.com/bowenliang123)
 
-**Github Repository:** https://github.com/bowenliang123/dify-trigger-openai
+**Github Repository:** https://github.com/bowenliang123/dify-openai-trigger
 
 **Dify Marketplace:** https://marketplace.dify.ai/plugins/bowenliang123/openai_trigger
 
