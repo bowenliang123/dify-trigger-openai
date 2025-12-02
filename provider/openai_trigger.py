@@ -1,20 +1,15 @@
+import logging
 import time
 from collections.abc import Mapping
 from typing import Any
 
-from werkzeug import Request, Response
-
-from dify_plugin.entities.oauth import TriggerOAuthCredentials
 from dify_plugin.entities.provider_config import CredentialType
 from dify_plugin.entities.trigger import EventDispatch, Subscription, UnsubscribeResult
 from dify_plugin.errors.trigger import (
-    SubscriptionError,
     TriggerDispatchError,
-    TriggerProviderCredentialValidationError,
-    TriggerProviderOAuthError,
-    UnsubscribeError,
 )
 from dify_plugin.interfaces.trigger import Trigger, TriggerSubscriptionConstructor
+from werkzeug import Request, Response
 
 from utils.webhook_utils import verify_webhook_signature
 
@@ -23,9 +18,10 @@ class OpenaiTriggerTrigger(Trigger):
     """
     Handle the webhook event dispatch.
     """
+
     def _dispatch_event(self, subscription: Subscription, request: Request) -> EventDispatch:
+        webhook_secret = subscription.properties.get("webhook_secret", "")
         try:
-            webhook_secret = subscription.properties.get("webhook_secret")
             if not webhook_secret:
                 raise TriggerDispatchError("Webhook secret is required to validate request.")
 
@@ -37,9 +33,11 @@ class OpenaiTriggerTrigger(Trigger):
             events: list[str] = self._dispatch_trigger_events(payload=payload)
             # print("events", events)
 
-            return EventDispatch(events=events, response=response)
+            return EventDispatch(events=events, response=response, payload=payload)
         except Exception as exc:
-            print("exc", exc)
+            logging.exception(f"Failed to parse or validate webhook signature."
+                              f" Length of OpenAI Webhook signing secret: {len(webhook_secret)}."
+                              f" Webhook request body: {str(request.data)}.")
             raise exec
 
     def _dispatch_trigger_events(self, payload: Mapping[str, Any]) -> list[str]:
@@ -65,7 +63,8 @@ class OpenaiTriggerTrigger(Trigger):
             raise
         except Exception as exc:
             raise TriggerDispatchError(f"Failed to parse payload: {exc}") from exc
-        
+
+
 class OpenaiTriggerSubscriptionConstructor(TriggerSubscriptionConstructor):
     """Manage openai_trigger trigger subscriptions."""
 
@@ -76,13 +75,12 @@ class OpenaiTriggerSubscriptionConstructor(TriggerSubscriptionConstructor):
         pass
 
     def _create_subscription(
-        self,
-        endpoint: str,
-        parameters: Mapping[str, Any],
-        credentials: Mapping[str, Any],
-        credential_type: CredentialType,
+            self,
+            endpoint: str,
+            parameters: Mapping[str, Any],
+            credentials: Mapping[str, Any],
+            credential_type: CredentialType,
     ) -> Subscription:
-        
         events: list[str] = parameters.get("events", [])
 
         # Replace this placeholder with API calls to register a webhook
@@ -96,19 +94,19 @@ class OpenaiTriggerSubscriptionConstructor(TriggerSubscriptionConstructor):
         )
 
     def _delete_subscription(
-        self,
-        subscription: Subscription,
-        credentials: Mapping[str, Any],
-        credential_type: CredentialType,
+            self,
+            subscription: Subscription,
+            credentials: Mapping[str, Any],
+            credential_type: CredentialType,
     ) -> UnsubscribeResult:
         # Tear down any remote subscription that was created in `_subscribe`.
         return UnsubscribeResult(success=True, message="Subscription removed.")
 
     def _refresh_subscription(
-        self,
-        subscription: Subscription,
-        credentials: Mapping[str, Any],
-        credential_type: CredentialType,
+            self,
+            subscription: Subscription,
+            credentials: Mapping[str, Any],
+            credential_type: CredentialType,
     ) -> Subscription:
         # Extend the subscription lifetime or renew tokens with your upstream service.
         return Subscription(
