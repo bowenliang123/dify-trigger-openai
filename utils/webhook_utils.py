@@ -26,7 +26,12 @@ def verify_webhook_signature(
         webhook.verify(data, headers)
     except WebhookVerificationError as e:
         logging.exception(e)
-        raise TriggerProviderOAuthError(f"Invalid webhook signature or secret, {str(e)}")
+        raise TriggerProviderOAuthError(
+            f"Failed to verify webhook signature,"
+            f" webhook secret len: {len(webhook_secret)},",
+            f" data len: {len(data)},",
+            f" headers size: {len(headers)},",
+            f" exception: {str(e)}")
 
 
 def transform_webhook(expected_event_type: str,
