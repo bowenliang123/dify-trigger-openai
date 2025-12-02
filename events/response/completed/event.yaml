@@ -6,8 +6,8 @@ identity:
     zh_Hans: "Response Completed 事件"
 
 description:
-  en_US: "Response Completed Event"
-  zh_Hans: "Response Completed 事件"
+  en_US: "Sent when a background response has been completed."
+  zh_Hans: "当后台响应完成时发出。"
 
 output_schema:
   type: object

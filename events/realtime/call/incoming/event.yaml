@@ -6,8 +6,8 @@ identity:
     zh_Hans: "Realtime Call Incoming 事件"
 
 description:
-  en_US: "Realtime Call Incoming Event"
-  zh_Hans: "Realtime Call Incoming 事件"
+  en_US: "Sent when Realtime API Receives a incoming SIP call."
+  zh_Hans: "当实时API接收到传入的SIP呼叫时发出。"
 
 output_schema:
   type: object

@@ -6,8 +6,8 @@ identity:
     zh_Hans: "Finetuning Job Failed 事件"
 
 description:
-  en_US: "Finetuning Job Failed Event"
-  zh_Hans: "Finetuning Job Failed 事件"
+  en_US: "Sent when a fine-tuning job has failed."
+  zh_Hans: "当微调作业失败时发出。"
 
 output_schema:
   type: object

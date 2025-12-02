@@ -6,8 +6,8 @@ identity:
     zh_Hans: "Response Failed 事件"
 
 description:
-  en_US: "Response Failed Event"
-  zh_Hans: "Response Failed 事件"
+  en_US: "Sent when a background response has been failed."
+  zh_Hans: "当后台响应失败时发出。"
 
 output_schema:
   type: object

@@ -6,8 +6,8 @@ identity:
     zh_Hans: "Batch Completed 事件"
 
 description:
-  en_US: "Batch Completed Event"
-  zh_Hans: "Batch Completed 事件"
+  en_US: "Sent when a batch API request has been completed."
+  zh_Hans: "当一个批量 API 请求完成时发出。"
 
 output_schema:
   type: object

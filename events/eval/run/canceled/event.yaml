@@ -6,8 +6,8 @@ identity:
     zh_Hans: "Eval Run Cancelled 事件"
 
 description:
-  en_US: "Eval Run Cancelled Event"
-  zh_Hans: "Eval Run Cancelled 事件"
+  en_US: "Sent when an eval run has been canceled."
+  zh_Hans: "当评估运行被取消时发出。"
 
 output_schema:
   type: object

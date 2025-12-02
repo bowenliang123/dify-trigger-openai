@@ -6,8 +6,8 @@ identity:
     zh_Hans: "Response Incomplete 事件"
 
 description:
-  en_US: "Response Incomplete Event"
-  zh_Hans: "Response Incomplete 事件"
+  en_US: "Sent when a background response has been interrupted."
+  zh_Hans: "当后台响应被中断时发出。"
 
 output_schema:
   type: object

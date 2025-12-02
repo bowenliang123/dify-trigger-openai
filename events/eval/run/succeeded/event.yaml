@@ -6,8 +6,8 @@ identity:
     zh_Hans: "Eval Run Succeeded 事件"
 
 description:
-  en_US: "Eval Run Succeeded Event"
-  zh_Hans: "Eval Run Succeeded 事件"
+  en_US: "Sent when an eval run has succeeded."
+  zh_Hans: "当评估运行成功时发出。"
 
 output_schema:
   type: object
